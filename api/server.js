@@ -57,4 +57,19 @@ server.get("/api/users/:id", (req, res) => {
     });
 });
 
+server.delete("/api/users/:id", (req, res) => {
+  const { id } = req.params;
+  UserModel.remove(id)
+    .then((user) => {
+      !user
+        ? res.status(404).json({ message: "The user could not be removed" })
+        : res.status(200).json(`User ${user.id} was successfully deleted`);
+    })
+    .catch(() => {
+      res.status(500).json({
+        message: "The user could not be removed",
+      });
+    });
+});
+
 module.exports = server;
