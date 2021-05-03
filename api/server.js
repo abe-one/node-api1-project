@@ -72,4 +72,27 @@ server.delete("/api/users/:id", (req, res) => {
     });
 });
 
+server.put("/api/users/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, bio } = req.body;
+    if (!name || !bio) {
+      res
+        .status(400)
+        .json({ message: "Please provide the name and bio for the user" });
+    } else {
+      const updatedUser = await UserModel.update(id, req.body);
+      !updatedUser
+        ? res.status(404).json({
+            message: "The user with the specified ID does not exist",
+          })
+        : res.status(201).json({ message: "User successfully updated." });
+    }
+  } catch {
+    res
+      .status(500)
+      .json({ message: "The user information could not be modified" });
+  }
+});
+
 module.exports = server;
