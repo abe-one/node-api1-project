@@ -14,7 +14,7 @@ There are two possible ways to submit your project. Your instructor should have 
 
 #### Option A - Codegrade
 
-- [ ] Fork and clone the repository.
+- [x] Fork and clone the repository.
 - [ ] Open the assignment in Canvas and click on the "Set up git" option.
 - [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key.
 - [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
@@ -22,10 +22,10 @@ There are two possible ways to submit your project. Your instructor should have 
 
 #### Option B - Pull Request
 
-- [ ] Fork and clone the repository.
-- [ ] Implement your project in a `firstname-lastname` branch.
-- [ ] Create a pull request of `firstname-lastname` against your `main` branch.
-- [ ] Open the assignment in Canvas and submit your pull request.
+- [x] Fork and clone the repository.
+- [x] Implement your project in a `firstname-lastname` branch.
+- [x] Create a pull request of `firstname-lastname` against your `main` branch.
+- [x] Open the assignment in Canvas and submit your pull request.
 
 ### Task 2: Minimum Viable Product
 
@@ -65,7 +65,7 @@ You can find them inside `api/users/model.js`. All of these functions return Pro
 - `findById` Takes an `id` and resolves to the user with that id (or null if the id does not exist).
 - `insert` Takes a new user `{ name, bio }` and resolves to the the newly created user `{ id, name, bio }`.
 - `update` Takes an `id` and an existing user `{ name, bio }` and resolves the updated user `{ id, name, bio}` (or null if the id does not exist).
-- `remove` Takes an `id`  and resolves to the deleted user `{ id, name, bio }`.
+- `remove` Takes an `id` and resolves to the deleted user `{ id, name, bio }`.
 
 #### Endpoint Specifications
 
@@ -88,9 +88,10 @@ When the client makes a `POST` request to `/api/users`:
 
 When the client makes a `GET` request to `/api/users`:
 
-- If there's an error in retrieving the _users_ from the database:
-  - respond with HTTP status code `500`.
-  - return the following JSON object: `{ message: "The users information could not be retrieved" }`.
+[x] If there's an error in retrieving the _users_ from the database:
+
+- respond with HTTP status code `500`.
+- return the following JSON object: `{ message: "The users information could not be retrieved" }`.
 
 When the client makes a `GET` request to `/api/users/:id`:
 
